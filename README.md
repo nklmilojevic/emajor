@@ -28,7 +28,7 @@ The default hotkey is **⌃⌥⇧⌘Space** (Hyper+Space). You can change it in 
 | Trigger | Behaviour |
 |---|---|
 | Hyper+Space | Open picker — shows recent emojis if no query |
-| `em <query>` | Search all emojis by natural language |
+| `emj <query>` | Search all emojis by natural language |
 | ↩ | Copy emoji to clipboard |
 | ⌘↵ | Copy `:shortcode:` to clipboard |
 
