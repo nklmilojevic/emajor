@@ -9,7 +9,7 @@ package main
 
 static void renderEmojiToPNG(const char *emojiUTF8, const char *outPath) {
     @autoreleasepool {
-        int size = 128; // 128px → retina-ready at 64pt display size
+        int size = 256;
         NSString *emoji = [NSString stringWithUTF8String:emojiUTF8];
         NSImage *image = [[NSImage alloc] initWithSize:NSMakeSize(size, size)];
         [image lockFocus];
