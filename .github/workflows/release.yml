@@ -24,9 +24,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${{ github.ref_name }}" \
-            --title "${{ github.ref_name }}" \
-            --generate-notes \
-            emajor.alfredworkflow 2>/dev/null || \
-          gh release upload "${{ github.ref_name }}" \
-            emajor.alfredworkflow --clobber
+          tag="${{ github.ref_name }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" emajor.alfredworkflow --clobber
+          else
+            gh release create "$tag" \
+              --title "$tag" \
+              --generate-notes \
+              emajor.alfredworkflow
+          fi
