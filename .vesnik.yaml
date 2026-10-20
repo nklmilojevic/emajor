@@ -1,0 +1,10 @@
+provider: claude
+model: claude-haiku-5-5
+
+style:
+  product: "a natural language emoji picker for Alfred"
+
+packages:
+  - files:
+      - file: workflow/info.plist
+        regex: '<key>version</key>\s*<string>(?P<v>[^<]+)</string>'
